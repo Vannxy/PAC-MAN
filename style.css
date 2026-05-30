@@ -1,1 +1,95 @@
+:root {
+    --neon-blue: #0022ff;
+    --neon-glow: 0 0 15px rgba(0, 85, 255, 0.8);
+    --arcade-yellow: #ffff00;
+}
 
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0;
+    background-color: #000000; color: white;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; touch-action: none;
+    display: flex; flex-direction: column;
+    height: 100vh; align-items: center; justify-content: space-between;
+}
+
+#ui-layer {
+    width: 100%; max-width: 380px;
+    display: flex; justify-content: space-between;
+    padding: 15px 10px 5px 10px;
+    font-size: 16px; font-weight: bold; color: var(--arcade-yellow); z-index: 5;
+}
+
+#game-container {
+    flex-grow: 1; display: flex;
+    justify-content: center; align-items: center;
+    position: relative; width: 100%;
+    max-width: 380px; max-height: 380px;
+}
+
+canvas {
+    width: 100%; height: 100%; object-fit: contain;
+    box-shadow: var(--neon-glow); border: 4px solid var(--neon-blue);
+    background: #000; border-radius: 8px;
+}
+
+/* PERBAIKAN: D-Pad diperbesar untuk kenyamanan */
+#d-pad {
+    display: grid; gap: 15px; padding: 15px;
+    grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
+    width: 280px; /* Diperbesar dari 240px */
+    height: 280px; /* Diperbesar dari 240px */
+    margin-bottom: 20px; z-index: 5;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.07);
+    border: 2px solid rgba(0, 85, 255, 0.4); border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 36px; /* Ikon panah diperbesar dari 28px */
+    color: white; user-select: none;
+    transition: all 0.1s ease; box-shadow: 0 0 5px rgba(0, 85, 255, 0.2);
+}
+
+.btn:active {
+    background: rgba(0, 85, 255, 0.4);
+    border-color: var(--arcade-yellow); color: var(--arcade-yellow);
+    box-shadow: 0 0 15px var(--arcade-yellow);
+}
+
+#btn-up { grid-column: 2; grid-row: 1; }
+#btn-left { grid-column: 1; grid-row: 2; }
+#btn-right { grid-column: 3; grid-row: 2; }
+#btn-down { grid-column: 2; grid-row: 3; }
+
+#overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; z-index: 10; border-radius: 4px;
+}
+
+.hidden { display: none !important; }
+
+#overlay-title {
+    color: var(--arcade-yellow); margin-bottom: 25px; font-size: 32px;
+    letter-spacing: 4px; text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+}
+
+#credit-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-top: 25px; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+    
+.btn-start {
+    background: var(--arcade-yellow); color: #000;
+    padding: 12px 35px; font-size: 18px; font-weight: bold;
+    border: none; border-radius: 25px; cursor: pointer; text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.4); transition: transform 0.1s;
+}
+.btn-start:active { transform: scale(0.95); }
+                                                        
