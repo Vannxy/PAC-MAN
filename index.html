@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pac-Man Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ui-layer">
+        <div>SCORE: <span id="score">0</span></div>
+        <div>HIGH: <span id="high-score">0</span></div>
+        <div>LIVES: <span id="lives">❤️❤️❤️</span></div>
+    </div>
+
+    <div id="game-container">
+        <canvas id="gameCanvas" width="380" height="380"></canvas>
+        <div id="overlay">
+            <h1 id="overlay-title">PAC-MAN</h1>  
+            <button id="start-btn" class="btn-start">TAP TO START</button>
+            <p id="credit-text">by: Ovan</p>
+        </div>
+    </div>
+
+    <div id="d-pad">
+        <div class="btn" id="btn-up">▲</div>
+        <div class="btn" id="btn-left">◀</div>
+        <div class="btn" id="btn-right">▶</div>
+        <div class="btn" id="btn-down">▼</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+  
