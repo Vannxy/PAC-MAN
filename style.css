@@ -35,13 +35,13 @@ canvas {
     background: #000; border-radius: 8px;
 }
 
-/* PERBAIKAN: D-Pad diperbesar untuk kenyamanan */
+
 #d-pad {
     display: grid; gap: 15px; padding: 15px;
     grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
-    width: 280px; /* Diperbesar dari 240px */
-    height: 280px; /* Diperbesar dari 240px */
-    margin-bottom: 20px; z-index: 5;
+    width: 280px; 
+    height: 280px; 
+    margin-bottom: 80px; z-index: 5;
 }
 
 .btn {
